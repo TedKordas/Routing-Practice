@@ -1,14 +1,15 @@
 import React from 'react';
-import App from './App.js'
-import nextPage from './nextPage';
+import { Switch, Route } from 'react-router-dom';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+// Components
+import Route1 from './Route1';
+import Route2 from './Route2';
+import Route3 from './Route3';
 
-export default(
-    <Router>
-        <div>
-            <Route component={App} exact path='/' />
-            <Route component={nextPage} path='/nextPage' />
-        </div>
-    </Router>
+export default (
+  <Switch>
+    <Route exact path="/" component={ Route1 } />
+    <Route path="/2" component={ Route2 } />
+    <Route path="/3" component={ Route3 } />
+  </Switch>
 )
